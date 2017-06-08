@@ -4,10 +4,12 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 const app = express();
+const router = require('./router')
 
 //App Setup
 app.use(morgan('combined')); // Logging
 app.use(bodyParser.json({ type: '*/*'}));
+router(app);
 
 // Server setup
 const port = process.env.PORT || 8000;
