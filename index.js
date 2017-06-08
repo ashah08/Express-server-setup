@@ -6,7 +6,8 @@ const bodyParser = require('body-parser');
 const app = express();
 
 //App Setup
-
+app.use(morgan('combined')); // Logging
+app.use(bodyParser.json({ type: '*/*'}));
 
 // Server setup
 const port = process.env.PORT || 8000;
